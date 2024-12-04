@@ -1,0 +1,99 @@
+openapi: 3.0.0
+info:
+  description: This API provides integrated user and order information
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  title: Client Service API
+  version: 1.0.0
+servers:
+- description: Client Service API
+  url: http://localhost:8080/api
+tags:
+- description: Integrated user and order operations
+  name: user-orders
+paths:
+  /orders/user/{id}:
+    get:
+      description: send request to orders table and retrieve all orders related one
+        user
+      operationId: getOrdersByUserId
+      parameters:
+      - description: The unique identifier of the user
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/OrderDTO'
+                type: array
+          description: Order details retrieved successfully.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Order not found.
+      summary: get the list of orders
+      tags:
+      - order
+      x-accepts: application/json
+components:
+  schemas:
+    OrderDTO:
+      example:
+        quantity: 1
+        user_id: 6
+        price: 0.5962133916683182
+        order_id: 0
+        product_name: product_name
+      properties:
+        order_id:
+          format: int64
+          type: integer
+        user_id:
+          format: int64
+          type: integer
+        product_name:
+          type: string
+        quantity:
+          format: int32
+          type: integer
+        price:
+          format: decimal
+          minimum: 0
+          type: number
+      required:
+      - order_id
+      - price
+      - product_name
+      - quantity
+      type: object
+    Response:
+      properties:
+        responseCode:
+          description: A short error code to describe the error type.
+          type: string
+        message:
+          description: A detailed message explaining the error.
+          type: string
+        timestamp:
+          description: The timestamp when the error occurred.
+          format: date-time
+          type: string
+      required:
+      - message
+      - object
+      - responseCode
+      - timestamp
+      type: object
+
