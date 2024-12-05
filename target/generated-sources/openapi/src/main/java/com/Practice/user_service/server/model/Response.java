@@ -21,7 +21,7 @@ import jakarta.annotation.Generated;
  * Response
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-12-04T16:19:01.828452375+05:30[Asia/Colombo]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-12-05T09:38:24.428926841+05:30[Asia/Colombo]")
 public class Response {
 
   private String responseCode;

@@ -4,7 +4,7 @@ Client Service API
 
 - API version: 1.0.0
 
-- Build date: 2024-12-04T16:19:02.838542510+05:30[Asia/Colombo]
+- Build date: 2024-12-05T09:38:25.240394837+05:30[Asia/Colombo]
 
 This API provides integrated user and order information
 

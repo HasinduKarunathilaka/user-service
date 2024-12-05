@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   OrderDTO.JSON_PROPERTY_QUANTITY,
   OrderDTO.JSON_PROPERTY_PRICE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-04T16:19:02.838542510+05:30[Asia/Colombo]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-05T09:38:25.240394837+05:30[Asia/Colombo]")
 public class OrderDTO implements Serializable {
   private static final long serialVersionUID = 1L;
 
