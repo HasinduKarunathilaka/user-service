@@ -38,4 +38,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/user-service:latest
+        tags: hasindukarunathilaka/user-service:latest
