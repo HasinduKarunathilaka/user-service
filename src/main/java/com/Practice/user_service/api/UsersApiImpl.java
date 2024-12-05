@@ -25,6 +25,7 @@ public class UsersApiImpl implements UsersApiDelegate {
         this.userService = userService;
     }
 
+    //get user details by id
     @Override
     public Mono<ResponseEntity<UserDTO>> getUserById(Long id, ServerWebExchange exchange) {
         return userService.getUserById(id)
@@ -32,6 +33,7 @@ public class UsersApiImpl implements UsersApiDelegate {
     }
 
 
+    //add user
     @Override
     public Mono<ResponseEntity<Response>> addUser(Mono<UserDTO> userDTO, ServerWebExchange exchange) {
         return userDTO.flatMap(userService::addUser)
@@ -53,11 +55,13 @@ public class UsersApiImpl implements UsersApiDelegate {
     }
 
 
+    //get all users details
     @Override
     public Mono<ResponseEntity<Flux<UserDTO>>> getAllUsers(ServerWebExchange exchange) {
         return Mono.just(ResponseEntity.ok(userService.getAllUsers()));
     }
 
+    //update user
     @Override
     public Mono<ResponseEntity<Response>> updateUser(Long id, Mono<UserDTO> userDTO, ServerWebExchange exchange) {
         return userDTO
@@ -78,6 +82,8 @@ public class UsersApiImpl implements UsersApiDelegate {
                 }));
     }
 
+
+    //delete user
     @Override
     public Mono<ResponseEntity<Response>> deleteUser(Long id, ServerWebExchange exchange) {
         return userService.deleteUser(id)
@@ -98,6 +104,7 @@ public class UsersApiImpl implements UsersApiDelegate {
     }
 
 
+    //get user details with order details
     @Override
     public Mono<ResponseEntity<UserOrderResponse>> getUserWithOrderDetails(Long id, ServerWebExchange exchange) {
         return userService.getUserWithOrders(id)
