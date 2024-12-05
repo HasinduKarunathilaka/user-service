@@ -39,3 +39,6 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: hasindukarunathilaka/user-service:latest
+        secrets: |
+          DOCKER_BUILDKIT=1
+          BUILDKIT_STEP_LOG_MAX_SIZE=10485760
