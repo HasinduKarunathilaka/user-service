@@ -38,4 +38,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/user_microservice:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/user-service:latest
