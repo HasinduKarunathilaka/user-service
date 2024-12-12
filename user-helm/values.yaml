@@ -1,8 +1,8 @@
 replicaCount: 3
 
 image:
-  repository: hasindukarunathilaka/user-service  # Your Docker Hub repository name
-  tag: "latest"  # The tag for your Docker image
+  repository: hasindukarunathilaka/user-service  # Docker Hub repository name
+  tag: "latest"  # The tag for Docker image
   pullPolicy: Always
 
 service:
